@@ -1,0 +1,51 @@
+{% extends "../base/base.html" %}
+{% load static %}
+{% block template %}
+{% include "../base/navbar.html" %}
+<h1 class="page-header-title">Your Categories</h1>
+<hr class="category-horizontal-rule">
+<div class="new-category-button-container">
+    <a class="new-category-button-link" href="{% url 'expenses:add_category' %}">
+        <p class="new-category-button">Add New Category</p>
+    </a>
+</div>
+{% for category in categories %}
+<div class="category-card-container">
+    <div class="category-card-top-section">
+        <p class="category-card-title-text">{{ category.name }}</p>
+        <a href="{% url 'expenses:edit_category' category_id=category.id %}">
+            <img src="{% static 'expenses/images/edit.svg' %}">
+        </a>
+    </div>
+    <div class="category-card-table-info">
+        <div class="transactions-table category-table-container">
+            <div class="transactions-table-header">
+                <div class="table-cell">Title</div>
+                <div class="table-cell">Planned</div>
+                <div class="table-cell">Received</div>
+            </div>
+            <hr class="horizontal-rule">
+            {% for i in items %}
+            <div class="transaction-row">
+                <div class="table-cell">{{i.name}}</div>
+                <div class="table-cell">{{i.planned}}</div>
+                <div class="table-cell">{{i.received}}</div>
+                <div class="table-cell">        
+                    <a href="{% url 'expenses:edit_item' item_id=i.id %}">
+                        <img src="{% static 'expenses/images/edit.svg' %}">
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="category-card-bottom-section">
+        <div class="category-add-item-button-container">
+            <a href="{% url 'expenses:add_item' %}" class="category-add-item-button-link">
+                <p class="category-add-item-button-text">Add Item</p>
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends "../base/base.html" %}
+{% csrf_token %}
+{% load static %}
+{% block template %}
+
+<!--CODE HERE-->
+<!--NAVBAR-->
+<nav class="navbar">
+    <div class="logo">B U D G E T L Y</div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <img src="{% static 'expenses/images/hamburger.svg' %}" class="nav-menu-img">
+    </div>
+    <div class="nav-links" id="navLinks">
+        <a href="#" class="close-nav" onclick="toggleMenu()">×</a>
+        <a href="{% url 'expenses:category' %}">Home</a>
+        <a href="{% url 'expenses:transactions' %}">Transactions</a>
+        <a href="{% url 'expenses:reports' %}">Reports</a>
+        <a href="{% url 'expenses:profile' %}">Profile</a>
+        <a href="#">Link Bank Account</a>
+        <a href="#">Daily Spending Limit</a>
+        <a href="{% url 'expenses:logout' %}" class="logout">Logout</a>
+    </div>
+</nav>
+
+<script>
+    function toggleMenu() {
+        var navLinks = document.getElementById("navLinks");
+        if (navLinks.style.display === "block") {
+            navLinks.style.display = "none";
+        } else {
+            navLinks.style.display = "block";
+        }
+    }
+</script>
+
+<!--PROFILE IMAGE-->
+
+
+{% if request.user.is_authenticated %}
+<div style="  display: flex;
+justify-content: center;
+align-items: center; margin-top: 3rem; ">
+<img src="{% static 'expenses/images/default.svg' %}" alt="Default Image" style="width: 150px; height: 150px;"></div>
+{%endif%}
+   {% if request.user.is_authenticated %}
+<div style="display: flex;
+justify-content: center;
+align-items: center; margin-top: 3rem; "><h1 class="profile-name">User: {{request.user}}  </h1></div>
+{% else %}
+<a href="{% url '' %}"><h1 style="  display: flex;
+    justify-content: center;
+    align-items: center; margin-top: 3rem; ">login</h1></a>
+{% endif %}
+
+{% if request.user.is_authenticated %}
+<!--EDIT PROFILE BUTTON-->
+<div class="new-category-button-container">
+    <a href="#" class="new-category-button-link">
+        <p class="new-category-button">Edit Profile</p>
+    </a>
+</div>
+
+
+
+
+<div class="transaction-card-container">
+
+    <div style="  display: flex;
+    justify-content: space-between;">
+    <h2 style="margin-left: 1rem;">Banking Information</h2>
+
+    <img src="{% static 'expenses/images/right-arrow.png' %}" alt="Default Image" style="width:40px; height: 40px; margin-top:1rem; margin-right:1rem; "
+    >
+  
+</div>
+</div>
+
+<div class="transaction-card-container">
+
+    <div style="  display: flex;
+    justify-content: space-between;">
+    <h2 style="margin-left: 1rem;">Security</h2>
+
+    <img src="{% static 'expenses/images/right-arrow.png' %}" alt="Default Image" style="width:40px; height: 40px; margin-top:1rem; margin-right:1rem; "
+    >
+  
+</div>
+</div>
+
+<div class="transaction-card-container">
+
+    <div style="  display: flex;
+    justify-content: space-between;">
+    <h2 style="margin-left: 1rem;">Support</h2>
+
+    <img src="{% static 'expenses/images/right-arrow.png' %}" alt="Default Image" style="width:40px; height: 40px; margin-top:1rem; margin-right:1rem;  "
+    >
+  
+</div>
+</div>
+
+<!--LOGOUT BUTTON-->
+
+    <div class="category-add-item-button-container" style=" margin-top: 2rem; ">
+        <a href="{% url 'expenses:logout' %}" class="category-add-item-button-link">
+            <p class="category-add-item-button-text">Log Out</p>
+        </a>
+    </div>
+    {% endif %}
+{% endblock %}
+

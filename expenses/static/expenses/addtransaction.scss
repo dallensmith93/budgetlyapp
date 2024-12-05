@@ -1,0 +1,65 @@
+.add-transaction-container {
+    background: $primary-color;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%; // You can adjust this for larger screens if needed
+    box-shadow: 0px 4px 10px $shadow-color;
+  
+    .form-header {
+      @include flex-center;
+      justify-content: space-between;
+  
+      h2 {
+        margin: 0;
+        color: $white;
+      }
+  
+      .close-button {
+        background: none;
+        border: none;
+        color: $white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+  
+    .form-body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  
+      label {
+        color: $white;
+      }
+  
+      input,
+      select {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+      }
+    }
+  
+    .form-footer {
+      @include flex-center;
+      justify-content: flex-end;
+      margin-top: 20px;
+  
+      .add-button {
+        padding: 10px 20px;
+        background-color: $dark-blue;
+        color: $white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  
+    // Optional: Add focus styles for your inputs and selects here
+  }
+  
+  // Responsive adjustments if necessary
+  @media (max-width: 768px) {
+    // Adjust styles for mobile if needed
+  }
+  

@@ -1,0 +1,114 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+/* Main layout adjustments */
+.content-container {
+  width: 90%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 13px;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  color: white;
+  font-family: 'Archivo Narrow', sans-serif;
+  margin-top: 20px;
+}
+
+/* Header title */
+.page-header-title {
+  font-family: 'Teko', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Transaction button */
+.new-transaction-button {
+  border: none;
+  border-radius: 8px;
+  background: #213C57;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  text-align: center;
+  font-family: "Archivo Narrow", sans-serif;
+  width: 188px;
+}
+.new-transaction-button:hover {
+  background-color: #142536;
+}
+
+.new-transaction-button-link {
+  text-decoration: none;
+  text-align: center;
+}
+
+.new-transaction-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Horizontal rule */
+.horizontal-rule {
+  border: none;
+  height: 1px;
+  color: #ffffff;
+  background-color: #ffffff;
+  width: 95%;
+}
+
+/* Transaction card container */
+.transaction-card-container {
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.405);
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  margin-top: 20px;
+  font-family: "Archivo Narrow", sans-serif;
+}
+
+/* Transactions table */
+.transactions-table {
+  width: 100%;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.transactions-table-header,
+.transaction-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.transactions-table-header {
+  padding: 10px 0;
+}
+
+.transaction-row {
+  padding: 10px 0;
+}
+
+.table-cell {
+  text-align: center;
+  padding: 5px;
+}
+
+.transaction-row:not(:last-child) {
+  border-bottom: 1px solid #4F5B69;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .transaction-button {
+    width: auto;
+  }
+}
+

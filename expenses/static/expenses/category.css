@@ -1,0 +1,102 @@
+.page-header-title {
+  color: white;
+  text-align: center;
+  font-family: "Teko", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.new-category-button {
+  border: none;
+  border-radius: 8px;
+  background: #213C57;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  text-align: center;
+  font-family: "Archivo Narrow", sans-serif;
+  width: 188px;
+}
+.new-category-button:hover {
+  background-color: #142536;
+}
+
+.new-category-button-link {
+  text-decoration: none;
+  text-align: center;
+}
+
+.new-category-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.category-horizontal-rule {
+  border: none;
+  height: 1px;
+  color: #ffffff;
+  background-color: #ffffff;
+  width: 95%;
+}
+
+.profile-name {
+  color: white;
+  font-family: "Archivo Narrow", sans-serif;
+  font-weight: 100;
+  font-size: 24px;
+}
+
+.category-card-container {
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  margin-top: 20px;
+  font-family: "Archivo Narrow", sans-serif;
+}
+
+.category-card-img {
+  width: 40px;
+}
+
+.category-card-top-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.category-card-title-text {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+
+.category-add-item-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.category-add-item-button-link {
+  text-decoration: none;
+  background-color: #0E62B8;
+  color: white;
+  width: 185px;
+  text-align: center;
+  border-radius: 8px;
+}
+.category-add-item-button-link:hover {
+  background-color: #0e365e;
+}
+
+.category-table-container {
+  margin-left: auto;
+  margin-right: auto;
+}/*# sourceMappingURL=category.css.map */

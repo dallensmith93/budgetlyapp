@@ -1,0 +1,15 @@
+{% extends "../base/base.html" %}
+{% load static %}
+{% block template %}
+{% include "../base/navbar.html" %}
+<div class="add-transaction-container">
+    <div class="form-header">
+        <h2>Add Item</h2>
+    </div>
+    <form method="post" action="{% url 'expenses:edit_item' item.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

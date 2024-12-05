@@ -1,0 +1,45 @@
+{% extends "../base/base.html" %}
+{% load static %}
+
+{% block template %}
+{% include "base/navbar.html" %}
+
+<div class="">
+    <h1 class="page-header-title">Transaction History</h1>
+    <hr class="horizontal-rule">
+    <div class="new-transaction-button-container">
+        <a href="{% url 'expenses:add_transaction' %}" class="new-category-button-link">
+            <p class="new-category-button">Add New Transaction</p>
+        </a>
+    </div>
+    <div class="transaction-card-container">
+    <div class="transactions-table">
+        <div class="transactions-table-header">
+            <div class="table-cell">Date</div>
+            <div class="table-cell">Description</div>
+            <div class="table-cell">Category</div>
+            <div class="table-cell">Amount</div>
+        </div>
+        <hr class="horizontal-rule">
+        {% for transaction in transactions %}
+        <div class="transaction-row">
+            <div class="table-cell">{{ transaction.date|date:"d/m/Y" }}</div>
+            <div class="table-cell">{{ transaction.description }}</div>
+            <div class="table-cell">{{ transaction.category.name }}</div>
+            <div class="table-cell">${{ transaction.amount }}</div>
+            <div class="table-cell">        
+                <a href="{% url 'expenses:edit_transaction' transaction_id=transaction.id %}">
+                    <img src="{% static 'expenses/images/edit.svg' %}">
+                </a>
+            </div>
+        </div>
+        {% empty %}
+        <div class="transaction-row">
+            <div class="table-cell" colspan="4">No transactions to show.</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUDGETLY | Money Management Application</title>
+    <link rel="stylesheet" href="{% static 'expenses/main.css' %}">
+</head>
+<body>
+<p style="color: white; ">
+{% if messages %}
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+{% endif %}
+</p>
+    {% block template %}
+   
+    {% endblock %}
+</body>
+</html>

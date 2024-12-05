@@ -1,0 +1,31 @@
+{% extends "../base/base.html" %}
+{% load static %}
+{% block template %}
+{% include "../base/navbar.html" %}
+<h1 class="page-header-title">Your Reports</h1>
+<hr class="category-horizontal-rule">
+<div class="reports-flex-container">
+    <div class="individual-report-container">
+        <h2>Your total expenses</h2>
+        <hr>
+        <div class="report-card-text">
+            <p>$ {{transaction_total}}</p>
+        </div>
+    </div>
+    <div class="individual-report-container">
+        <h2>Your total Categories</h2>
+        <hr>
+        <div class="report-card-text">
+            <p>{{categories_total}}</p>
+        </div>
+    </div>
+    <div class="individual-report-container">
+        <h2>Your total Items</h2>
+        <hr>
+        <div class="report-card-text">
+            <p>{{items_total}}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

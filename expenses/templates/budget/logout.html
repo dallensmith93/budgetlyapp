@@ -1,0 +1,31 @@
+{% extends "../base/base.html" %}
+{% csrf_token %}
+{% load static %}
+{% block template %}
+
+<!--CODE HERE-->
+<!--NAVBAR-->
+<nav class="navbar">
+    <div class="logo">B U D G E T L Y</div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <img src="{% static 'expenses/images/hamburger.svg' %}" class="nav-menu-img">
+    </div>
+    <div class="nav-links" id="navLinks">
+        <a href="#" class="close-nav" onclick="toggleMenu()">×</a>
+        <a href="#">Budget</a>
+        <a href="{% url 'expenses:transactions' %}">Transactions</a>
+        <a href="{% url 'expenses:reports' %}">Reports</a>
+        <a href="{% url 'expenses:profile' %}">Profile</a>
+        <a href="#">Link Bank Account</a>
+        <a href="#">Daily Spending Limit</a>
+        <a href="{% url 'expenses:logout' %}" class="logout">Logout</a>
+    </div>
+</nav>
+
+<h2>Logout Successfull go to the top right hand side to log back in by clicking home!</h2>
+
+
+
+    {% endif %}
+{% endblock %}
+

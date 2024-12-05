@@ -1,0 +1,96 @@
+// Assuming the same font import is needed
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+.transaction-header-title {
+    color: white;
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.transaction-button {
+    border: none;
+    border-radius: 8px;
+    background: #2980b9; // You can change the color as needed
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Archivo Narrow', sans-serif;
+    width: 188px;
+    &:hover {
+        background-color: darken(#2980b9, 10%);
+    }
+}
+
+.transaction-row {
+    display: flex;
+    align-items: center;
+}
+
+.transaction-button-link {
+    text-decoration: none;
+    text-align: center;
+}
+
+.transaction-button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.transaction-horizontal-rule {
+    border: none;
+    height: 1px;
+    color: #ffffff;
+    background-color: #ffffff;
+    width: 95%;
+    margin: 20px auto;
+}
+
+.transactions-card-container {
+    // Adjustments to match category card styles
+    background: rgba(255, 255, 255, 0.1); // Making it slightly transparent
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    margin-top: 20px;
+
+    .transaction-card {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.2); // Slight highlight for each card
+        border-radius: 5px;
+        margin-bottom: 0.5em;
+
+        span {
+            display: block;
+            padding: 0.5em;
+        }
+    }
+
+    .transaction-date {
+        font-size: 16px;
+    }
+
+    .transaction-description {
+        font-size: 16px;
+        max-width: 50%;
+    }
+
+    .transaction-category {
+        font-size: 16px;
+    }
+
+    .transaction-amount {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: right;
+    }
+}
